@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/style.css"/>
+    <script type='text/javascript' src='js/swipe_n_360_v2.0.min.js'></script>
+    <script type='text/javascript'>
+        function sendHit(value) {
+            alert(value)
+        }
+        var swipeNThreeSixty;
+        function loaded() {
+            swipeNThreeSixty = new threeSixty('img1', {
+                imagePath:"images/DQAGbrPsNDKZ5fIz.png",
+                frameWidth:320,
+                frameHeight:168,
+                sensitivity:5,
+                infinite:true,
+                transitionDuration:500,
+                behavior:"360",
+                totalFrames:2,
+                momentum:true,
+                currentFrame:1,
+                direction:"horizontal",
+                slideShow:false,
+                slideShowDelay:100,
+                slideShowWithTransition:false,
+                slideShowDirection:"RTL"
+            });
+
+            swipeNThreeSixty.onFrameChange = function () {
+//                sendHit(this.options.currentFrame)
+
+            }
+
+            swipeNThreeSixty.onPanStarted = function () {
+//                sendHit('pan started')
+            }
+
+            swipeNThreeSixty.onPanStopped = function () {
+//                sendHit(this.options.currentFrame)
+            }
+
+            /////////////////////////////////////////////////////////////////////////////
+
+
+            swipeNThreeSixty2 = new threeSixty('img2', {
+                imagePath:"images/360.jpg",
+                frameWidth:290,
+                frameHeight:168,
+                sensitivity:5,
+                transitionDuration:500,
+                behavior:"360",
+                totalFrames:12,
+                currentFrame:1,
+                slideShow:true,
+                slideShowDelay:120,
+                slideShowWithTransition:false,
+                slideShowDirection:"LTR"
+            });
+
+            swipeNThreeSixty2.onFrameChange = function () {
+//                if(swipeNThreeSixty2.options.currentFrame==2)
+//                swipeNThreeSixty.setFrameWithTransition(swipeNThreeSixty2.options.currentFrame)
+//                swipeNThreeSixty.setFrameSize(320,200);
+//                swipeNThreeSixty.addFrame(5)
+//                swipeNThreeSixty.setFrame(5)
+                swipeNThreeSixty.setFrame(5)
+//                swipeNThreeSixty.subtractFrame(5)
+//                swipeNThreeSixty.subtractFrame(5)
+//                alert(this.options.currentFrame)
+            }
+            swipeNThreeSixty2.onPanStarted = function () {
+//                sendHit('pan started')
+                this.stopSlideShow()
+
+            }
+            swipeNThreeSixty2.onPanStopped = function () {
+//                sendHit(this.options.currentFrame)
+            }
+            swipeNThreeSixty2.onClick = function () {
+                sendHit(this.options.currentFrame)
+            }
+
+            /////////////////////////////////////////////////////////////////////////////
+
+
+            swipeNThreeSixty3 = new threeSixty('img3', {
+                imagePath:"images/360.jpg",
+                frameWidth:290,
+                frameHeight:168,
+                sensitivity:5,
+                transitionDuration:500,
+                behavior:"swipe",
+                totalFrames:12,
+                currentFrame:1
+            });
+
+            swipeNThreeSixty3.onFrameChange = function () {
+//                if(swipeNThreeSixty2.options.currentFrame==2)
+//                swipeNThreeSixty.setFrameWithTransition(swipeNThreeSixty2.options.currentFrame)
+//                swipeNThreeSixty.setFrameSize(320,200);
+//                swipeNThreeSixty.addFrame(5)
+//                swipeNThreeSixty.subtractFrame(5)
+//                alert(this.options.currentFrame)
+            }
+            swipeNThreeSixty3.onPanStarted = function () {
+//                sendHit('pan started')
+            }
+            swipeNThreeSixty3.onPanStopped = function () {
+//                sendHit(this.options.currentFrame)
+            }
+            swipeNThreeSixty3.onClick = function () {
+//                sendHit(this.options.currentFrame)
+            }
+
+
+        }
+        document.addEventListener('DOMContentLoaded', loaded, false);
+//        document.addEventListener('touchmove', function (e) {
+//            e.preventDefault();
+//        }, false);
+
+    </script>
+    <title>Swipe V2.0</title>
+</head>
+<body>
+<div id="img1"></div>
+<div id="img2"></div>
+<div id="img3"></div>
+</body>
+</html>
+
+ 
